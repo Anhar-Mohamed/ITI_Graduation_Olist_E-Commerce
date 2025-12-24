@@ -1,14 +1,14 @@
-Olist E-Commerce Data Pipeline Project 🚀
+# Olist E-Commerce Data Pipeline Project 🚀
 
-Project Overview
+## Project Overview
 This project implements a complete End-to-End Data Engineering Pipeline for the Olist E-Commerce dataset. The goal is to build a robust Lambda Architecture that handles data ingestion, transformation, and visualization to provide business insights into sales, customers, and delivery performance.
 
-Architecture
-The project follows a modern data stack approach as shown in the workflow:
+## Architecture
+## The project follows a modern data stack approach as shown in the workflow:
 
 ![Project Workflow](./Image/Workflow_Pipeline.jpeg)
 
-⚡ Batch Layer (Historical Pipeline)
+## ⚡ Batch Layer (Historical Pipeline)
 
 Data Source: PostgreSQL Database containing the raw Olist dataset.
 Data Ingestion: Using Airbyte to extract data from Postgres and load it into the Data Warehouse.
@@ -16,7 +16,7 @@ Data Transformation: Using dbt (data build tool) to create Bronze, Silver, and G
 Data Storage: Snowflake / PostgreSQL (Warehouse layer).
 Visualization: Power BI / Metabase dashboards for business reporting.
 
-Project Structure
+## Project Structure
 
 The repository is organized as follows:
 airbyte/: Contains configuration files, Docker Compose, and connection settings for data synchronization.
@@ -26,7 +26,7 @@ models/silver/: Cleaned and standardized data.
 models/gold/: Business-ready fact and dimension tables.
 Postgres_SQL/: SQL scripts for database initialization and schema setup.
 
-How to Run the Project
+## How to Run the Project
 
 1. Prerequisites
 Docker & Docker Compose.
@@ -51,7 +51,7 @@ Run transformations: dbt run
 
 Key Performance Indicators (KPIs) tracked:
 
-Dashboards
+## Dashboards
 
 ![Revenue Dashboard](./Image/revenue.png)
 
@@ -59,21 +59,32 @@ Dashboards
 
 ![Order Dashboard](./Image/order.png)
 
-⚡ Streaming Layer (Real-Time Pipeline)
+## ⚡ Streaming Layer (Real-Time Pipeline)
 
 To complement the Batch layer, this project implements a Streaming Layer designed for real-time data processing and low-latency insights.
 
-Tech Stack:
+## Tech Stack:
 Debezium: Used for Change Data Capture (CDC) from the source PostgreSQL database to capture every row-level change (Insert/Update/Delete).
 Apache Kafka: Acts as the high-throughput distributed messaging backbone, streaming events from Debezium to downstream consumers.
 Apache Spark: Processes streaming data in real-time to perform windowed aggregations and immediate transformations.
 Grafana: Provides real-time monitoring and observability of the streaming metrics and data flow.
 
-How it works:
+## How it works:
 
 Capture: Debezium monitors the Postgres WAL (Write Ahead Log) and publishes events to Kafka topics.
 Process: Spark Structured Streaming consumes these topics, cleaning and enriching the data on the fly.
 Serve: The processed stream is pushed to the Gold layer or directly to real-time dashboards for immediate visibility.
 
-Future Improvements
+## Future Improvements
 Implement a Streaming Layer using Apache Kafka and Spark as per the Lambda Architecture design.
+
+## 👥 The Team
+This project was developed as a collaborative effort by a dedicated Data Engineering team. Special thanks to all team members for their contributions:
+Omar Yehia
+Mahmmoud Saad
+Rehab Ramadan
+Abdallah Fathi
+Anhar Mohamed
+
+
+
