@@ -48,10 +48,7 @@ Run transformations: dbt run
 
 Key Performance Indicators (KPIs) tracked:
 
-Total Revenue: Monthly and category-wise sales growth.
-Customer Satisfaction: Review scores analysis.
-Order Analytics: Top performing products.
-
+Dashboards
 ![Revenue Dashboard](./Image/revenue.png)
 ![Customer Dashboard](./Image/customer.png)
 ![Order Dashboard](./Image/order.png)
